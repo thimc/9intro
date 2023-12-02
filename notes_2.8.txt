@@ -1,8 +1,17 @@
-Q: Why was not zero the first address used by the memory image of program _global_?
-A: ?
+Q: Why was not zero the first address used by the memory image of
+program 02_global.c?
+A: Because of an abstraction called virtual memory.  Each program that
+is executed (loaded in to memory) are broken down in to memory
+segments.  There's the (program) text segment that contains
+instrouctions that can be executed but not modified, there's the data
+segment that contains initialized data for the program.  Lastly,
+there's the bss segment that contains uninitialized data.  Finally
+there's the stack segment that is used for reading and writing to
+memory.
 
-Q: Write a program that defines environment variables for arguments. For example,
-after calling the program with options:
+
+Q: Write a program that defines environment variables for arguments.
+For example, after calling the program with options:
 % args -ab -d x y z
 the following must happen:
 echo $opta
