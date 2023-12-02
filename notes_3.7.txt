@@ -1,0 +1,41 @@
+Q: Use the debugger, acid, to see that a program reading from standard
+input in a window is indeed waiting inside read while the system is
+waiting for you to type a line in the window.  Hint: Use ps to find
+out which process is running your program.
+A: Sample output from acid:
+cpu% acid 13145
+/proc/13145/text:amd64 plan 9 executable
+/sys/lib/acid/port
+/sys/lib/acid/amd64
+acid: lstk()
+pread(a0=0x0)+0xe /sys/src/libc/9syscall/pread.s:6
+read(buf=0x7fffffffeb00,n=0x400)+0x27 /sys/src/libc/9sys/read.c:7
+main()+0x3c /usr/thimc/9/book/12_read.c:12
+	buffer=0x0
+_main+0x40 /sys/src/libc/amd64/main9.s:15
+
+Q: Implement the cat(1) utility without looking at the source code for
+the one in your system.
+A: See solution3.7_cat.c
+
+Q: Compare your program from the previous problem with the one in the
+system.  Locate the one in the system using a command.  Discuss the
+differences between both programs.
+A: my version of cat is using buffered I/O via bio.h
+
+Q:Implement a version of chmod(1) that accepts an octal number
+representing a new set of permissions, and one or more files.  The
+program is to be used like in
+; 8.out 0775 file1 file2 file3
+A: See solution3.7_chmod.c
+
+Q: Implement your own program for doing a long listing like
+; ls -l
+would do.
+A: See solution3.7_lsl.c
+
+Q:Write a program that prints all the files contained in a directory
+(hierarchy) along with the total number of bytes consumed by each
+file.  If a file is a directory, its reported size must include that
+of the files found inside.  Compare with du(1).
+A: See solution3.7_du.c
