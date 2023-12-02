@@ -24,9 +24,6 @@ files start with "notes" along with their chapter number.
 In some instances the reader is told to write a program.  These
 programs are prefixed with "solution" along with the chapter.
 
-I must warn you, the reader, that some of the questions are perhaps a
-bit vaguely phrased so I've answered them as best as I could.
-
 
 ## License
 Unknown
