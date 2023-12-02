@@ -11,8 +11,5 @@ main(int, char*[])
 	write(fd, msg, strlen(msg));
 	close(fd);
 
-	fd = create("adir", OREAD, DMDIR|0755);
-	close(fd);
-
 	exits(nil);
 }
