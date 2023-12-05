@@ -1,7 +1,7 @@
 Q: What would this command do?
 % cp /fd/1 /fd/0
-A: That would effectively copy the file descriptor 1 (stdin) to file
-descriptor 2 (stdout), as a result the shell would take on a cat
+A: That would effectively copy the file descriptor 0 (stdin) to file
+descriptor 1 (stdout), as a result the shell would take on a cat
 behaviour where everything we type is printed back again on the console.
 
 Q: Why do you think that the code to initialize standard input,
