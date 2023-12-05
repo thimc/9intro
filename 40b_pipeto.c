@@ -22,7 +22,7 @@ cmdoutput(char* cmd, char *buf, long len)
 	default:
 		close(fd[1]);
 		for(tot = 0; len - tot > 1; tot += nr){
-			nr = read(fd[1], buf+tot, len - tot);
+			nr = read(fd[0], buf+tot, len - tot);
 			if (nr <= 0){
 				print("no output\n");
 				break;
