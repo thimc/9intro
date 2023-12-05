@@ -1,0 +1,36 @@
+Q: What would this command do?
+% cp /fd/1 /fd/0
+A: That would effectively copy the file descriptor 1 (stdin) to file
+descriptor 2 (stdout), as a result the shell would take on a cat
+behaviour where everything we type is printed back again on the console.
+
+Q: Why do you think that the code to initialize standard input,
+output, and error in the first process differs from this?
+open("/dev/cons, ORDWR);
+dup(0, 1);
+dup(0, 2);
+A: Standard input is only capable of reading, standard output and
+standard error are only capable of writing.  The code above opens the
+console for read and write access.
+
+Q: The code may fail and leave standard input closed.  When does this
+happen?  Why do you think this code was used for a program that
+redirected standard input to /notice?
+fd = open("/NOTICE", OREAD);
+dup(fd, 0);
+close(fd);
+A: It seems that the code is replacing the standard input file
+descriptor with a file and the program could fail if the open(2)
+syscall returns a file descriptor that is less than zero.  One way of
+this failing is if the file does not exist.
+
+Q: Show that a process that reads from an empty pipe gets blocked and
+will never run.  Which state is reported by ps for such process?
+A: We can demonstrate this by opening and commenting out the
+38_pipe.c:13 program.  Draw a new window and run ps(1) to find the PID
+of the process.  You'll see that its state will be stuck on Pread.
+
+Q: Modify the code for the srvecho program to perform the echo through
+the pipe, and not to the console.  Use the program con(1) to connect
+to the pipe through /srv/echo and test that it works.
+A: see solution5.9_srvecho.c
