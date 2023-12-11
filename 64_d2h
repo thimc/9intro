@@ -1,0 +1,11 @@
+#!/bin/rc
+rfork e
+if (~ $#* 0)
+	args=`{cat}
+if not
+	args=$*
+{
+	echo 'obase=16'
+	for (num in $args)
+		echo $num
+} | bc
