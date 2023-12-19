@@ -1,0 +1,5 @@
+#!/bin/rc
+file=$1
+tmp=$file^'.tmp'
+ssam 'x/\n+/c/\n/' $file > $tmp
+mv $tmp $file

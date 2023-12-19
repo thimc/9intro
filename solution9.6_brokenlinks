@@ -1,0 +1,16 @@
+#!/bin/rc
+
+for(f in $home/www/*.html){
+	urls=`{awk '{
+		while(match($0, /href="([^"]*)"/)){
+			print substr($0, RSTART+6, RLENGTH-7);
+			$0 = substr($0, RSTART + RLENGTH);
+		}
+	}' $f}
+	for(u in $urls){
+		hget $u >[1]/dev/null >[2]/dev/null
+		if(! ~ $status ''){
+			echo BAD: $u
+		}
+	}
+}
