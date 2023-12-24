@@ -1,6 +1,0 @@
-#!/bin/rc
-
-for(f in $home/www/*.html){
-	sed 's/\.htm\"/\.html\"/g' $f > $f^'.tmp'
-	mv $f^'.tmp' $f
-}

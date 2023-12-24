@@ -9,7 +9,8 @@ on over to [doc.cat-v.org](https://doc.cat-v.org/plan_9/9.intro.pdf)
 to download it for free.
 
 All of the files in this repo are numbered in ascending order
-according to their presence in the book.
+according to their presence in the book and I have divided the
+chapters in to folders.
 
 File names containing the letter 'b' indicate bonus files.  These
 files may not be fully written out in the book; instead, the author

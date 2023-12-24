@@ -1,2 +1,0 @@
-#!/bin/rc
-du -a /sys/src/ | awk '{print $2}' | xargs grep 'pipe\('

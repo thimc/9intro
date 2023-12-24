@@ -1,2 +1,0 @@
-#!/bin/rc
-cat | grep '^[a-zA-Z]+\(.*\)' | sed 's/$/;/g'

@@ -1,5 +1,0 @@
-#!/bin/rc
-
-for(f in $home/www/*.htm){
-	mv $f $"f^l
-}
