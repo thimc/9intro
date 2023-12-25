@@ -1,0 +1,21 @@
+Q: Locate the synchronization construct in programming languages you
+use.
+A: -
+
+Q: Do shell programs have race conditions?
+A: Yes, one example of this could be two separate scripts that are
+attempting to read or write to a file simultaneously.
+
+Q: Implement a concurrent program simulating a printer spooler.  It
+must have several processes.  Some of them generate jobs for printing
+(spool print jobs) and two other ones print jobs.  Needless to say
+that the program must not have race conditions.
+A: see solution10.7_spooler.c
+
+Q: Implement a semaphore using shared variables protected with (spin)
+locks.  Would you use it?  Why?
+A: see solution10.7_sema.c
+
+Q: Assume you have monitors (invent the syntax).  Implement a
+sempahore using monitors.
+A: -
