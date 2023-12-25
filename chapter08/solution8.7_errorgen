@@ -1,0 +1,28 @@
+#!/bin/rc
+
+prefix='E'
+tmp=0
+if (~ $#* 0)
+	args=`{cat}
+if not
+	args=$*
+
+echo $args
+
+echo 'enum {'
+for(i in $args){
+	enum=`{echo $prefix^$i | tr a-z A-Z}
+	if(~ $tmp 0){
+		echo '	'$enum' = 0,'
+		tmp=1
+	}
+	if not{
+		echo '	'$enum','
+	}
+}
+echo '};'
+echo 'const char *msgs[] = {'
+for(i in $args){
+	echo '	{"'$i'"},'
+}
+echo '};'

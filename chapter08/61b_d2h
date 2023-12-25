@@ -1,0 +1,4 @@
+#!/bin/rc
+{	echo 'obase=16'
+	echo $1
+} | bc

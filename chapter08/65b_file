@@ -1,0 +1,14 @@
+#!/bin/rc
+rfork e
+for (file in $*) {
+	switch($file){
+	case *.c *.h
+		echo $file: C source code
+	case *.gif
+		echo $file: GIF image
+	case *.jpg
+		echo $file: JPEG image
+	case *
+		echo $file: who knows
+	}
+}

@@ -1,0 +1,10 @@
+#!/bin/rc
+if(! ~ $#* 2){
+	echo usage: $0 src dst
+	exit usage
+}
+src=$1
+dst=$2
+
+echo cp $src/*.[ch] $dst/
+
