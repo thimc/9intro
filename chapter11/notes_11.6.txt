@@ -1,0 +1,29 @@
+Q: Implement a concurrent program simulating a printer spooler.  It
+must have several processes.  Some of them generate jobs for printing
+(spool print jobs) and two other ones print jobs.  Needless to say
+that the program must not have race conditions.  You must use threads
+and channels as the building blocks for the program.
+A: see solution10.7_spooler.c
+
+Q: One way to determine if a number is prime is to filter all natural
+numbers to remove numbers that are not prime.  Using different thread
+for filtering numbers that divide candidate numbers, write a program
+to write prime numbers.
+A: see solution11.6_prime.c
+
+Q: There are different cars trying to cross a bridge.  There are cars
+on both sides of the bridge.  Simulate this scenario using threads and
+channels.  Avoid accidents.
+A: see solution11.6_cars.c
+
+Q: The dining philosophers problem is a very famous one in concurrent
+programming.  There are philosophers who loop forever trying to think,
+and then to eat.  All of them are seated around a round table, with a
+single chopstick between each two philosophers.  To eat, a philosopher
+needs both the chopstick on the left and the one on the right.  Write
+a program to simulate this scenario using threads for the different
+philosophers.
+A: see solution11.6_philosophers.c
+
+Q: Avoid starvation in the previous problem.
+A: 
