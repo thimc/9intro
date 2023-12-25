@@ -1,0 +1,41 @@
+Q: Use /net to see which networks are available at your terminal.
+Determine the local address for your terminal for each one of the
+networks.
+A: % cat /net/ether*/addr
+
+Q: Repeat the second problem of chapter 1 for the terminals in your
+network.  Use /lib/ndb/localto locate other terminals.
+A: -
+
+Q: Start the echo server implemented in this chapter, and try to
+hangup its connection using the shell.
+A: % 6.cecho &
+% echo hangup >>/proc/$apid/notepg
+
+Q: Which processes are listening to the network in your terminal?
+What do they do?  (use the manual)
+A: The auth server, the file server, webfs(4), upasfs(4), dns(8), cs(8) and timesync(8)
+
+Q: Which one is the IP address for google.com?  Is the machine alive?
+Try to determine that in several different ways.
+A:
+
+Q: Implement a time of day service.  It must return the local time to
+any client.  Use telnet to test it.
+A: see solution6.6_timeofdayclient.c
+
+Q: Implement a client program for the server from the previous problem.
+A: see solution6.6_timeofdaysrv.c
+
+Q: Print all the information you can determine for all clients
+connecting to your time of day server.
+A: see solution6.6_timeofdaysrv.c
+
+Q: Change your server so it could be started using aux/listen1. Test it.
+A: see solution6.6_timeofdaysrv.c
+
+Q: Change your profile to adjust the shell prompt according to the
+machine name.  It must work both for terminals and connections to CPU
+servers.
+A: % sam $home/lib/profile
+,x/prompt.*/c/prompt=($sysname^'% ' '	')/
